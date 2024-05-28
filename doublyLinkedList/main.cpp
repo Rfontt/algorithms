@@ -36,12 +36,41 @@ struct DoublyLinkedList {
                 tail = newNode;
             }
         }
+
+        void forwardTravesal() {
+            Node* current = head;
+
+            while(current != nullptr) {
+                cout << current->data << endl;
+                
+                current = current->next;
+            }
+
+            cout << "nullptr" << endl;
+        }
+
+        void backwardTravesal() {
+            Node* current = tail;
+
+            while(current != nullptr) {
+                cout << current->data << endl;
+                
+                current = current->previous;
+            }
+
+            cout << "nullptr" << endl;
+        }
 };
 
 int main() {
     DoublyLinkedList doublyLinkedList;
 
     doublyLinkedList.append(10);
+    doublyLinkedList.append(20);
+    doublyLinkedList.append(30);
+
+    doublyLinkedList.forwardTravesal();
+    doublyLinkedList.backwardTravesal();
 
     return 0; 
 }
