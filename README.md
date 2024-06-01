@@ -125,3 +125,19 @@ Desvantagens:
 
 - Maior uso de memória, pois cada nó armazena dois ponteiros adicionais.
 - Estrutura mais complexa de implementar e gerenciar devido aos ponteiros adicionais.
+
+# Double Ended Queue - DEQUE
+
+O que é:
+
+- DEQUE é uma estrutura de dados que permite a inserção eficiente de elementos tanto no início, quanto no final da coleção.
+- É uma fila de duas pontas
+
+Onde é usado:
+
+- Implementação de filas com prioridades (Priority Queues)
+- Algoritmos de busca (BFS)
+- Sliding Window
+- Algoritmo de ordenação
+- Histórico de Ações
+- Processamento de Streams de Dados
