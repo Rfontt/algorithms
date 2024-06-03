@@ -36,21 +36,23 @@ struct Vector {
         }
     }
 
-    void putZeroAtTheEnd() {
-        T* newData = new T[size];
+    void swap(int& numberOne, int& numberTwo) {
+        int temp = numberOne;
 
-        for (T i = 0; i < size; i++) {
-            if(data[i] == 0) {
-                // newData[size] = 0;
-            } else {
-                cout << "data position: " << data[i] << endl;
-                newData[i] = data[i];
+        numberOne = numberTwo;
+        numberTwo = temp;
+    }
+
+    void putZeroAtTheEnd() {
+        int zeroIndex = 0;
+
+        for (int i = 0; i < size; i++) {
+            if(data[i] != 0) {
+                swap(data[i], data[zeroIndex]);
+
+                ++zeroIndex;
             }
         }
-
-        delete[] data;
-
-        data = newData;
     }
 };
 
@@ -58,8 +60,8 @@ int main() {
     Vector<int> vector;
     vector.push(10);
     vector.push(0);
-    vector.push(20);
     vector.push(0);
+    vector.push(20);
 
     cout << "initial array" << endl;
 
@@ -70,7 +72,7 @@ int main() {
 
     cout << "putZeroAtTheEnd" << endl;
 
-      vector.putZeroAtTheEnd();
+    vector.putZeroAtTheEnd();
 
 
     cout << vector.data[0] << endl;
