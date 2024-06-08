@@ -141,3 +141,39 @@ Onde é usado:
 - Algoritmo de ordenação
 - Histórico de Ações
 - Processamento de Streams de Dados
+
+# Map
+
+O que é:
+
+- É uma estrutura associativa que permite armazenar pares chaves-valor
+- Cada chave está associada a um valor correspondente
+- A chave é usada para indexar o valor, permitindo uma rápida recuperação do valor com base na chave
+- O map é uma implementação complexa baseada normalmente em árvores binárias de busca
+
+Onde é usado:
+
+- É usado amplamente para própositos diversos em programação
+- Armazenamento de configurações 
+- Cache
+- Mapeamento de IDs
+- Implementação de grafos
+- Gerenciamento de sessão
+
+**Mapas Ordenados**
+
+- Elementos são armazenados em uma árvore de busca binária balanceada
+- Os elementos são armazenados em ordem crescente com base nas chaves
+- Complexidade dde inserção e busca é log n
+- Você pode acessar os elementos por suas chaves e obter uma ordem determinística dos elementos
+
+**Mapas desordenados**
+
+- Os elementos são armazenados em uma tabela de dispersão (hash table). Não há garantia de ordem específica para os elementos
+- A complexidade de inserção e busca geralmente é O(1), podendo ser O(n), em casos raros
+- Você não tem a garantia de uma ordem específica ao acessar os elementos por suas chaves. A ordem dos elementos pode depender das funções de hash e colisão
+
+Qual usar?
+
+- Use um mapa ordenado quando precisar de elementos ordenados com base nas chaves e não se importar com a eficiência de inserção e busca
+- Use um mapa desordenado quando a ordem dos elementos não for importante, e você precisar de inserções e buscas rápidas, especialmente em grandes volume de dados.
