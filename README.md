@@ -177,3 +177,17 @@ Qual usar?
 
 - Use um mapa ordenado quando precisar de elementos ordenados com base nas chaves e não se importar com a eficiência de inserção e busca
 - Use um mapa desordenado quando a ordem dos elementos não for importante, e você precisar de inserções e buscas rápidas, especialmente em grandes volume de dados.
+
+# Trees
+
+- Uma estrutura de dados hierárquica que consiste em nós conectados por arestas
+- Cada árvore tem um nó especial chamado raiz que serve como ponto de partida. A partir da raiz você pode alcançar todos os outros nós da árvore.
+- Cada nó em uma árvore pode ter zero ou mais "filhos" conectados a ele.
+
+Onde é usado?
+
+- Pesquisa
+- Ordenação
+- Otimização
+- Inteligência Artificial
+- Jogos
