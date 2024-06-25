@@ -191,3 +191,9 @@ Onde é usado?
 - Otimização
 - Inteligência Artificial
 - Jogos
+
+## Árvore binária
+
+- É uma estrutura de dados em que cada nó pode ter no máximo dois filhos: um filho à esquerda e um filho a direita.
+- Isso significa que, para qualquer nó na árvore, ele pode ter filho à esquerda, um filho à direita, ambos ou nenhum.
+- As árvores binárias são amplamente utilizadas na programação e têm várias aplicações, incluindo estrutura de dados como árvores de busca binária (BST) e expressões aritméticas.

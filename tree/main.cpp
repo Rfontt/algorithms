@@ -3,45 +3,71 @@ using namespace std;
 
 struct Node {
     int data;
-    Node* next;
+    Node* right;
+    Node* left;
 
     Node(int value) {
         data = value;
-        next = nullptr;
+        right = nullptr;
+        left = nullptr;
     } 
 };
 
-struct Queue {
-    private:
-        Node *head;
-        Node *tail;
+Node* insert(Node* root, int value) {
+    if (root == nullptr) {
+        return new Node(value);
+    }
 
-    public:
-        Queue() {
-            head = nullptr;
-            tail = nullptr;
-        }
-        
-        bool isEmpty() {
-            return head == nullptr;
-        }
+    if (value > root->data) {
+        root->right = insert(root->right, value);
+    } else {
+        root->left = insert(root->left, value);
+    }
 
-        void enqueue(int value) {
-            Node* newNode = new Node(value);
+    return root;
+}
 
-            if (isEmpty()) {
-                head = tail = newNode;
-            } else {
-                tail->next = newNode;
-                tail = newNode;
-            }
-        }
+void preorderTraversal(Node *root) {
+    if (root == nullptr) {
+        return;
+    }
+
+    cout << root->data << endl;
+    
+    preorderTraversal(root->left);
+    preorderTraversal(root->right);
 };
 
-int main() {
-    Queue queue;
+void postorderTraversal(Node *root) {
+    if (root == nullptr) {
+        return;
+    }
+    
+    postorderTraversal(root->left);
+    postorderTraversal(root->right);
 
-    queue.enqueue(10);
+    cout << root->data << endl;
+}
+
+void inorderderTraversal(Node *root) {
+    if (root == nullptr) {
+        return;
+    }
+    
+    inorderderTraversal(root->left);
+
+    cout << root->data << endl;
+
+    inorderderTraversal(root->right);
+}
+
+int main() {
+    Node* binaryTree = insert(nullptr, 10);
+
+    insert(binaryTree, 15);
+    insert(binaryTree, 2);
+
+    preorderTraversal(binaryTree);
 
     return 0;
 }
