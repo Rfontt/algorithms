@@ -61,6 +61,22 @@ void inorderderTraversal(Node *root) {
     inorderderTraversal(root->right);
 }
 
+Node* find(Node* root, int value) {
+    if (root == nullptr) {
+        return nullptr;
+    }
+
+    if (root->data == value) {
+        return root;
+    }
+
+    if (value < root->data) {
+        return find(root->left, value);
+    } else {
+        return find(root->right, value);
+    }
+}
+
 int main() {
     Node* binaryTree = insert(nullptr, 10);
 
@@ -69,5 +85,13 @@ int main() {
 
     preorderTraversal(binaryTree);
 
+    Node* findNumber = find(binaryTree, 2);
+
+    if (findNumber != nullptr) {
+        cout << "I found it" << endl;
+    } else {
+        cout << "It does not exists" << endl;
+    }
+    
     return 0;
 }
