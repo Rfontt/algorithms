@@ -61,6 +61,46 @@ void inorderderTraversal(Node *root) {
     inorderderTraversal(root->right);
 }
 
+Node* findMin(Node* root) {
+    while(root->left != nullptr) {
+        root = root->left;
+    }
+
+    return root;
+}
+
+Node* deleteNode(Node* root, int value) {
+    if (root == nullptr) {
+        return root;
+    }
+
+    if (value < root->data) {
+        root->left = deleteNode(root->left, value);
+    } else if (value > root->data) {
+        root->right = deleteNode(root->right, value);
+    } else {
+        if (root->left == nullptr) {
+            Node* temp = root->right;
+
+            delete root;
+
+            return temp;
+        } else if (root->right == nullptr) {
+            Node* temp = root->left;
+
+            delete root;
+
+            return temp;
+        }
+
+        Node* temp = findMin(root->right);
+        root->data = temp->data;
+        root->right = deleteNode(root->right, temp->data);
+    }
+
+    return root;
+}
+
 Node* find(Node* root, int value) {
     if (root == nullptr) {
         return nullptr;
@@ -92,6 +132,10 @@ int main() {
     } else {
         cout << "It does not exists" << endl;
     }
+
+    deleteNode(binaryTree, 15);
+
+    preorderTraversal(binaryTree);
     
     return 0;
 }
