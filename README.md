@@ -197,3 +197,32 @@ Onde é usado?
 - É uma estrutura de dados em que cada nó pode ter no máximo dois filhos: um filho à esquerda e um filho a direita.
 - Isso significa que, para qualquer nó na árvore, ele pode ter filho à esquerda, um filho à direita, ambos ou nenhum.
 - As árvores binárias são amplamente utilizadas na programação e têm várias aplicações, incluindo estrutura de dados como árvores de busca binária (BST) e expressões aritméticas.
+
+## Árvore AVL
+
+O que é?
+
+ A árvore AVL leva o nome de seus inventores, Adelson-Velsky e Landis, que foram dois matemáticos russos e engenheiros da computação. Em 1962, eles publicaram um artigo intitulado "An Algorithm for the Organization of Information", onde apresentaram a ideia dessa árvore balanceada.
+
+- Uma forma especializada de árvores binárias de busca que mantêm o balanceamento automático
+- Em uma árvore AVL, a diferença entre as alturas das subárvores esquerda e direita de qualquer nó (conhecida como fator de equilíbrio) é restrita a um pequeno conjunto de valores, geralmente -1, 0 ou 1.
+
+### Balanceamento
+
+O balanceamento em uma árvore binária se refere à quantidade de nós na subárvore e na subárvore direita de cada nó. Especialmente, o balanceamento é medido como a diferença entre as alturas das subárvores esquerda e direita de um nó.
+
+### Altura
+
+- Quanto maior a altura, pior a eficiência da árvore
+- Uma árvore pessimamente balanceada pode executar buscas em complexidades O(n)
+- Árvores balanceadas executarão suas buscas em O(log n)
+
+### Fator de Equilíbrio / Balanceamento
+
+- Cada nó em uma árvore binária tem um valor chamado "fator de equilíbrio". O fator de equilíbrio é a diferença entre as alturas das subárvores esquerda e direita de um nó.
+- Um fato de equilíbrio dentro do intervalo {-1, 0, 1} significa que a árvore está balanceada naquele nó.
+- Fator de balanceamento  = Altura da subárvore direita - Altura da subárvore esquerda
+
+### Altura de um nó vazio
+
+- A altura de um nó vazio pode ser considerada -1
